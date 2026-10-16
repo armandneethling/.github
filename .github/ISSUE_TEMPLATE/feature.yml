@@ -1,0 +1,51 @@
+name: Feature
+description: New feature or change
+title: "[Feature] "
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: "**Build from this description only. Older comments are superseded.**"
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repo
+      options: [budget-calculator, Brain, Other]
+    validations: {required: true}
+  - type: textarea
+    id: goal
+    attributes: {label: Goal}
+    validations: {required: true}
+  - type: textarea
+    id: context
+    attributes: {label: Context/links}
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria (Given/When/Then)
+      render: gherkin
+      value: |
+        Feature:
+          Scenario:
+            Given
+            When
+            Then
+    validations: {required: true}
+  - type: textarea
+    id: files
+    attributes: {label: Files/areas touched}
+  - type: textarea
+    id: tests
+    attributes: {label: Tests}
+  - type: textarea
+    id: out_of_scope
+    attributes: {label: Out of scope}
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options: [S, M, L]
+    validations: {required: true}
+  - type: input
+    id: owner
+    attributes: {label: Owner}
